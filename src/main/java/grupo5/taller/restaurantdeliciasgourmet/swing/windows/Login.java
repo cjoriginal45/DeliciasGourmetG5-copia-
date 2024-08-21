@@ -1,4 +1,4 @@
-package com.mycompany.restaurantdeliciasgourmet.swing.windows;
+package grupo5.taller.restaurantdeliciasgourmet.swing.windows;
 
 import javax.swing.*;
 import com.formdev.flatlaf.FlatDarkLaf;

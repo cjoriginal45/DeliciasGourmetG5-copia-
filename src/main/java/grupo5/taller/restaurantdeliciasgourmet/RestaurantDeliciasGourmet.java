@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.restaurantdeliciasgourmet;
+package grupo5.taller.restaurantdeliciasgourmet;
 
-import com.mycompany.restaurantdeliciasgourmet.swing.windows.Login;
+import grupo5.taller.restaurantdeliciasgourmet.swing.windows.Login;
 import javax.swing.SwingUtilities;
 
 /**
  *
- * @author sebas
+ * @author grupo5
  */
 public class RestaurantDeliciasGourmet {
 
