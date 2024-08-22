@@ -10,4 +10,5 @@ package grupo5.taller.restaurantdeliciasgourmet.logica;
  */
 public class Empleado {
     private int kl;
+    private int [] = new int[10];
 }
