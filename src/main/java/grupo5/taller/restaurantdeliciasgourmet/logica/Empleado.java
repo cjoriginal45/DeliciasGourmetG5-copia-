@@ -12,6 +12,7 @@ public class Empleado extends Persona{
 
     public Empleado() {
     }
+    
 
     public Empleado(Integer idEmpleado, Rol rol, Permiso permiso, ArrayList<Administrador> administradores) {
         this.idEmpleado = idEmpleado;
