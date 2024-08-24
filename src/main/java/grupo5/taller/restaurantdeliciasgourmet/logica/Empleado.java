@@ -3,8 +3,8 @@ package grupo5.taller.restaurantdeliciasgourmet.logica;
 
 import java.util.ArrayList;
 
+public class Empleado extends Persona {
 
-public class Empleado extends Persona{
     private Integer idEmpleado;
     private Rol rol;
     private Permiso permiso;
@@ -12,7 +12,6 @@ public class Empleado extends Persona{
 
     public Empleado() {
     }
-    
 
     public Empleado(Integer idEmpleado, Rol rol, Permiso permiso, ArrayList<Administrador> administradores) {
         this.idEmpleado = idEmpleado;
@@ -57,7 +56,5 @@ public class Empleado extends Persona{
     public String toString() {
         return "Empleado{" + "idEmpleado=" + idEmpleado + ", rol=" + rol + ", permiso=" + permiso + ", administradores=" + administradores + '}';
     }
-    
-    
-    
+
 }
