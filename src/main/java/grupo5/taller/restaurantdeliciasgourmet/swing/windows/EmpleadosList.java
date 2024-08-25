@@ -6,7 +6,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
 import grupo5.taller.restaurantdeliciasgourmet.logica.Empleado;
-import grupo5.taller.restaurantdeliciasgourmet.persistencia.ControlPersistencia;
+import grupo5.taller.restaurantdeliciasgourmet.persistencia.EmpleadoDAO;
 
 /**
  * @author grupo5
@@ -14,10 +14,10 @@ import grupo5.taller.restaurantdeliciasgourmet.persistencia.ControlPersistencia;
 public class EmpleadosList extends JFrame {
 
     private JTable empleadosTable;
-    private ControlPersistencia controlPersistencia;
+    private EmpleadoDAO controlPersistencia;
 
     public EmpleadosList() {
-        this.controlPersistencia = RestaurantDeliciasGourmet.cp;
+        this.controlPersistencia = RestaurantDeliciasGourmet.empleadosDAO;
         initComponents();
     }
 
@@ -53,8 +53,8 @@ public class EmpleadosList extends JFrame {
     }
 
     public static void main(String[] args) {
-        ControlPersistencia controlPersistencia = new ControlPersistencia();
-        controlPersistencia.createEmpleadoTable();
+        EmpleadoDAO controlPersistencia = new EmpleadoDAO();
+        controlPersistencia.retrieveEmpleados();
         
         SwingUtilities.invokeLater(() -> {
             new EmpleadosList().setVisible(true);

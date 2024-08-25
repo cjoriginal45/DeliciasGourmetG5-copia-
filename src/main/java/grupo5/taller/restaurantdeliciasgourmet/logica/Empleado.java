@@ -17,7 +17,7 @@ public class Empleado extends Persona {
         this.idEmpleado = idEmpleado;
         this.rol = rol;
         this.permiso = permisos;
-        RestaurantDeliciasGourmet.cp.insertEmpleado(this);
+        RestaurantDeliciasGourmet.empleadosDAO.insertEmpleado(this);
     }
     private void insertEmpleado(){
         
