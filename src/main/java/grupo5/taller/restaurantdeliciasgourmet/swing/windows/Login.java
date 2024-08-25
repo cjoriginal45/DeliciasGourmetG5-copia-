@@ -2,9 +2,13 @@ package grupo5.taller.restaurantdeliciasgourmet.swing.windows;
 
 import javax.swing.*;
 import com.formdev.flatlaf.FlatDarkLaf;
+import grupo5.taller.restaurantdeliciasgourmet.RestaurantDeliciasGourmet;
+import grupo5.taller.restaurantdeliciasgourmet.logica.Empleado;
+import grupo5.taller.restaurantdeliciasgourmet.persistencia.EmpleadoDAO;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class Login extends JFrame {
 
@@ -76,23 +80,34 @@ public class Login extends JFrame {
         });
     }
 
-    private void validarLogin() {
-        String usuario = txtUsuario.getText();
-        String password = new String(txtPassword.getPassword());
+ 
+private void validarLogin() {
+    String usuario = txtUsuario.getText();
+    String password = new String(txtPassword.getPassword());
 
-        if ("admin".equals(usuario) && "1234".equals(password)) {
-            JOptionPane.showMessageDialog(this, "Login exitoso!");
-            new Home().setVisible(true);
-            dispose();
-        } else {
-            JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
+    EmpleadoDAO empleadoDAO = RestaurantDeliciasGourmet.getEmpleadoDAO();
+    List<Empleado> empleados = empleadoDAO.retrieveEmpleados();
+
+    boolean loginExitoso = false;
+
+    for (Empleado empleado : empleados) {
+        if (empleado.getNombreUsuario().equals(usuario) && empleado.getContrasenia().equals(password)) {
+            loginExitoso = true;
+            break;
         }
     }
 
+    if (loginExitoso) {
+        JOptionPane.showMessageDialog(this, "Login exitoso!");
+        new HomeAdmin().setVisible(true);  // Replace with appropriate UI navigation based on role
+        dispose();
+    } else {
+        JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
     private void crearUsuario() {
         JOptionPane.showMessageDialog(this, "Falta implementar.");
     }
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {

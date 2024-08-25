@@ -4,7 +4,7 @@ import grupo5.taller.restaurantdeliciasgourmet.logica.Empleado;
 import grupo5.taller.restaurantdeliciasgourmet.logica.Rol;
 import grupo5.taller.restaurantdeliciasgourmet.logica.Permiso;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public class EmpleadoDAO {
@@ -15,8 +15,10 @@ public class EmpleadoDAO {
     }
 
     public void insertEmpleado(Empleado empleado) {
-        String sql = "INSERT INTO Empleado(idEmpleado, rol, permiso) VALUES(?, ?, ?)";
-        genericDAO.insert(sql, empleado.getIdEmpleado(), empleado.getRol().toString(), empleado.getPermiso().toString());
+        String insertSql = "INSERT INTO Empleado(nombre, nombreUsuario, contrasenia, correoElectronico, telefono, rol, permiso) VALUES(?, ?, ?, ?, ?, ?, ?)";
+        String result = genericDAO.insert(insertSql, empleado.getNombre(), empleado.getNombreUsuario(), empleado.getContrasenia(), empleado.getCorreoElectronico(), 
+                                          empleado.getTelefono(), empleado.getRol().toString(), 
+                                           empleado.getPermiso().toString());
     }
 
     public List<Empleado> retrieveEmpleados() {
@@ -26,9 +28,15 @@ public class EmpleadoDAO {
             @Override
             public Empleado mapRow(ResultSet rs) throws SQLException {
                 Integer idEmpleado = rs.getInt("idEmpleado");
+                String nombre = rs.getString("nombre");
+                String nombreUsuario = rs.getString("nombreUsuario");
+                String contrasenia = rs.getString("contrasenia");
+                String correoElectronico = rs.getString("correoElectronico");
+                String telefono = rs.getString("telefono");
                 Rol rol = Rol.valueOf(rs.getString("rol"));
                 Permiso permiso = Permiso.valueOf(rs.getString("permiso"));
-                return new Empleado(idEmpleado, rol, permiso);
+
+                return new Empleado(idEmpleado,nombre, nombreUsuario, contrasenia, correoElectronico, telefono, rol, permiso);
             }
         });
     }

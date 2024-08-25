@@ -7,8 +7,12 @@ import java.util.List;
 public class GenericDAO<T> {
     private String jdbcUrl;
 
+    public String getJdbcUrl() {
+        return jdbcUrl;
+    }
+
     public GenericDAO() {
-        jdbcUrl = "jdbc:sqlite:src/main/java/grupo5/taller/restaurantdeliciasgourmet/persistencia/db/usersdb.db";
+        jdbcUrl = SQLManager.getJdbcUrl();
     }
 
     public String insert(String sql, Object... params) {

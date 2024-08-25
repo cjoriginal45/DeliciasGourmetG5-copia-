@@ -2,7 +2,6 @@
 package grupo5.taller.restaurantdeliciasgourmet.logica;
 
 import grupo5.taller.restaurantdeliciasgourmet.RestaurantDeliciasGourmet;
-import java.util.ArrayList;
 
 public class Empleado extends Persona {
 
@@ -13,11 +12,66 @@ public class Empleado extends Persona {
     public Empleado() {
     }
 
-    public Empleado(Integer idEmpleado, Rol rol, Permiso permisos) {
-        this.idEmpleado = idEmpleado;
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
+    }
+
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public Empleado(String nombre, String nombreUsuario, String contrasenia, String correo, String telefono, Rol rol, Permiso permisos) { //Este se usa para crear empleados.
+        this.nombre = nombre;
+        this.nombreUsuario = nombreUsuario;
+        this.contrasenia= contrasenia;
+        this.correoElectronico = correo;
+        this.telefono = telefono;
         this.rol = rol;
         this.permiso = permisos;
-        RestaurantDeliciasGourmet.empleadosDAO.insertEmpleado(this);
+        RestaurantDeliciasGourmet.getEmpleadoDAO().insertEmpleado(this);
+    }
+    
+    public Empleado(int idEmpleado, String nombre, String nombreUsuario, String contrasenia, String correo, String telefono, Rol rol, Permiso permisos) { //Este se usa para generar la view en la lista.
+        this.idEmpleado = idEmpleado;
+        this.nombre = nombre;
+        this.nombreUsuario = nombreUsuario;
+        this.contrasenia= contrasenia;
+        this.correoElectronico = correo;
+        this.telefono = telefono;
+        this.rol = rol;
+        this.permiso = permisos;
     }
     private void insertEmpleado(){
         

@@ -2,6 +2,7 @@ package grupo5.taller.restaurantdeliciasgourmet.swing.windows;
 
 import javax.swing.*;
 import com.formdev.flatlaf.FlatDarkLaf;
+import grupo5.taller.restaurantdeliciasgourmet.RestaurantDeliciasGourmet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,9 +11,9 @@ import java.awt.event.ActionListener;
  *
  * @author grupo5
  */
-public class Home extends JFrame {
+public class HomeAdmin extends JFrame {
 
-    public Home() {
+    public HomeAdmin() {
         initComponents();
     }
 
@@ -108,7 +109,7 @@ public class Home extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new Home().setVisible(true);
+                new HomeAdmin().setVisible(true);
             }
         });
     }

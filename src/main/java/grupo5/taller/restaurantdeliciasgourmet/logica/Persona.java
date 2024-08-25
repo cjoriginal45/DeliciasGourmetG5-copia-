@@ -9,17 +9,42 @@ package grupo5.taller.restaurantdeliciasgourmet.logica;
  * @author Usuario
  */
 public class Persona {
-    private String nombre;
-    private String correoElectronico;
-    private String telefono;
+    protected String nombre;
+    protected String nombreUsuario;
+    protected String contrasenia;
+    protected String correoElectronico;
+    protected String telefono;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String correoElectronico, String telefono) {
+    public Persona(String nombreUsuario, String contrasenia) {
+        this.nombreUsuario = nombreUsuario;
+        this.contrasenia = contrasenia;
+    }
+
+    public Persona(String nombre, String nombreUsuario, String contrasenia, String correoElectronico, String telefono) {
         this.nombre = nombre;
+        this.nombreUsuario = nombreUsuario;
+        this.contrasenia = contrasenia;
         this.correoElectronico = correoElectronico;
         this.telefono = telefono;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
     public String getNombre() {

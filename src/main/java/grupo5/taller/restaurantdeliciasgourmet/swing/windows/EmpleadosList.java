@@ -12,18 +12,17 @@ import grupo5.taller.restaurantdeliciasgourmet.persistencia.EmpleadoDAO;
  * @author grupo5
  */
 public class EmpleadosList extends JFrame {
-
     private JTable empleadosTable;
-    private EmpleadoDAO controlPersistencia;
+    private static EmpleadoDAO empleadoDAO;
 
     public EmpleadosList() {
-        this.controlPersistencia = RestaurantDeliciasGourmet.empleadosDAO;
+        empleadoDAO = RestaurantDeliciasGourmet.getEmpleadoDAO();
         initComponents();
     }
 
     private void initComponents() {
         setTitle("Listado de Empleados");
-        setSize(600, 400);
+        setSize(800, 400); // Adjusted size for better visibility
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -32,18 +31,28 @@ public class EmpleadosList extends JFrame {
 
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("ID");
+        model.addColumn("Nombre");
+        model.addColumn("Correo Electrónico");
+        model.addColumn("Teléfono");
         model.addColumn("Rol");
         model.addColumn("Permiso");
 
-        List<Empleado> empleados = controlPersistencia.retrieveEmpleados();
+        try {
+            List<Empleado> empleados = empleadoDAO.retrieveEmpleados();
 
-        for (Empleado empleado : empleados) {
-            Object[] rowData = {
-                empleado.getIdEmpleado(),
-                empleado.getRol().toString(),
-                empleado.getPermiso() != null ? empleado.getPermiso().toString() : "Sin Permiso"
-            };
-            model.addRow(rowData);
+            for (Empleado empleado : empleados) {
+                Object[] rowData = {
+                    empleado.getIdEmpleado(),
+                    empleado.getNombre(),
+                    empleado.getCorreoElectronico(),
+                    empleado.getTelefono(),
+                    empleado.getRol().toString(),
+                    empleado.getPermiso() != null ? empleado.getPermiso().toString() : "Sin Permiso"
+                };
+                model.addRow(rowData);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al recuperar empleados: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
 
         empleadosTable = new JTable(model);
@@ -53,9 +62,6 @@ public class EmpleadosList extends JFrame {
     }
 
     public static void main(String[] args) {
-        EmpleadoDAO controlPersistencia = new EmpleadoDAO();
-        controlPersistencia.retrieveEmpleados();
-        
         SwingUtilities.invokeLater(() -> {
             new EmpleadosList().setVisible(true);
         });

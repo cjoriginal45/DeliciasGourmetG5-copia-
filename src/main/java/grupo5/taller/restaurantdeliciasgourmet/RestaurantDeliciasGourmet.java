@@ -9,6 +9,7 @@ import grupo5.taller.restaurantdeliciasgourmet.logica.Permiso;
 import grupo5.taller.restaurantdeliciasgourmet.logica.Rol;
 import grupo5.taller.restaurantdeliciasgourmet.persistencia.EmpleadoDAO;
 import grupo5.taller.restaurantdeliciasgourmet.persistencia.GenericDAO;
+import grupo5.taller.restaurantdeliciasgourmet.persistencia.SQLManager;
 import grupo5.taller.restaurantdeliciasgourmet.swing.windows.Login;
 import java.sql.*;
 import javax.swing.SwingUtilities;
@@ -20,8 +21,8 @@ import javax.swing.SwingUtilities;
  * @author grupo5
  */
 public class RestaurantDeliciasGourmet {
-    public static GenericDAO cp;
-    public static EmpleadoDAO empleadosDAO;
+    private static GenericDAO genericDAO;
+    private static EmpleadoDAO empleadoDAO;
     public static void main(String[] args) {
         String jdbcUrl = "jdbc:sqlite:src/main/java/grupo5/taller/restaurantdeliciasgourmet/persistencia/db/usersdb.db";
        SwingUtilities.invokeLater(new Runnable() {
@@ -33,17 +34,32 @@ public class RestaurantDeliciasGourmet {
        try (Connection conn = DriverManager.getConnection(jdbcUrl)) {
             if (conn != null) { 
                 System.out.println("Conectado al SQLite!");
-                cp = new GenericDAO();
-                
+                genericDAO = new GenericDAO();
+                empleadoDAO = new EmpleadoDAO();
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-       empleadosDAO = new EmpleadoDAO();
-       Empleado a = new Empleado(23,Rol.RECEPCIONISTA,Permiso.PERMISO_COMPLETO);
-       Empleado b = new Empleado(24,Rol.ADMIN,Permiso.PERMISO_COMPLETO);
-       Empleado c = new Empleado(25,Rol.MAITRE,Permiso.PERMISO_COMPLETO);
-       System.out.println(empleadosDAO.retrieveEmpleados().toString());
+       SQLManager.createDatabaseAndTables();
+       Empleado c = new Empleado("Tomi", "Omeprazol", "contra123","Tomi@correo.com","Tomi54345",Rol.ADMIN,Permiso.PERMISO_COMPLETO);
+       System.out.println(empleadoDAO.retrieveEmpleados().toString());
+       
+    }
+
+    public static GenericDAO getGenericDAO() {
+        return genericDAO;
+    }
+
+    public static void setGenericDAO(GenericDAO genericDAO) {
+        RestaurantDeliciasGourmet.genericDAO = genericDAO;
+    }
+
+    public static EmpleadoDAO getEmpleadoDAO() {
+        return empleadoDAO;
+    }
+
+    public static void setEmpleadoDAO(EmpleadoDAO empleadoDAO) {
+        RestaurantDeliciasGourmet.empleadoDAO = empleadoDAO;
     }
 }
 
