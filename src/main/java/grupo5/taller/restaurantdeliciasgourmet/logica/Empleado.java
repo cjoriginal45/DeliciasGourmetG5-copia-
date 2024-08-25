@@ -1,6 +1,7 @@
 
 package grupo5.taller.restaurantdeliciasgourmet.logica;
 
+import grupo5.taller.restaurantdeliciasgourmet.RestaurantDeliciasGourmet;
 import java.util.ArrayList;
 
 public class Empleado extends Persona {
@@ -8,16 +9,18 @@ public class Empleado extends Persona {
     private Integer idEmpleado;
     private Rol rol;
     private Permiso permiso;
-    private ArrayList<Administrador> administradores;
 
     public Empleado() {
     }
 
-    public Empleado(Integer idEmpleado, Rol rol, Permiso permiso, ArrayList<Administrador> administradores) {
+    public Empleado(Integer idEmpleado, Rol rol, Permiso permisos) {
         this.idEmpleado = idEmpleado;
         this.rol = rol;
-        this.permiso = permiso;
-        this.administradores = administradores;
+        this.permiso = permisos;
+        RestaurantDeliciasGourmet.cp.insertEmpleado(this);
+    }
+    private void insertEmpleado(){
+        
     }
 
     public Integer getIdEmpleado() {
@@ -44,17 +47,10 @@ public class Empleado extends Persona {
         this.permiso = permiso;
     }
 
-    public ArrayList<Administrador> getAdministradores() {
-        return administradores;
-    }
-
-    public void setAdministradores(ArrayList<Administrador> administradores) {
-        this.administradores = administradores;
-    }
 
     @Override
     public String toString() {
-        return "Empleado{" + "idEmpleado=" + idEmpleado + ", rol=" + rol + ", permiso=" + permiso + ", administradores=" + administradores + '}';
+        return "Empleado{" + "idEmpleado=" + idEmpleado + ", rol=" + rol + ", permiso=" + permiso + '}';
     }
 
 }

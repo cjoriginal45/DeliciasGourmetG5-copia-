@@ -93,7 +93,7 @@ public class Home extends JFrame {
         btnEmpleados.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Ver Empleados Clicked!");
+                new EmpleadosList().setVisible(true);
             }
         });
 
