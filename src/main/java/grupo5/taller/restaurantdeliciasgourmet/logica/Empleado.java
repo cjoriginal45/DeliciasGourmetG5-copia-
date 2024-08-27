@@ -12,42 +12,52 @@ public class Empleado extends Persona {
     public Empleado() {
     }
 
+    @Override
     public String getNombre() {
         return nombre;
     }
 
+    @Override
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    @Override
     public String getNombreUsuario() {
         return nombreUsuario;
     }
 
+    @Override
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
 
+    @Override
     public String getContrasenia() {
         return contrasenia;
     }
 
+    @Override
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
 
+    @Override
     public String getCorreoElectronico() {
         return correoElectronico;
     }
 
+    @Override
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
 
+    @Override
     public String getTelefono() {
         return telefono;
     }
 
+    @Override
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }

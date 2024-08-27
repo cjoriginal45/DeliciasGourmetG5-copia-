@@ -11,11 +11,11 @@ public class Cliente{
     public Cliente() {
     }
 
-    public Cliente(int numeroMesa, int capacidad, String ubicacion, boolean disponibiñidad) {
+    public Cliente(int numeroMesa, int capacidad, String ubicacion, boolean disponibinidad) {
         this.numeroMesa = numeroMesa;
         this.capacidad = capacidad;
         this.ubicacion = ubicacion;
-        this.disponibiñidad = disponibiñidad;
+        this.disponibiñidad = disponibinidad;
     }
 
     public int getNumeroMesa() {
@@ -46,8 +46,8 @@ public class Cliente{
         return disponibiñidad;
     }
 
-    public void setDisponibiñidad(boolean disponibiñidad) {
-        this.disponibiñidad = disponibiñidad;
+    public void setDisponibiñidad(boolean disponibinidad) {
+        this.disponibiñidad = disponibinidad;
     }
         
         
