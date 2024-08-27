@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package grupo5.taller.restaurantdeliciasgourmet.logica;
-import grupo5.taller.restaurantdeliciasgourmet.logica.Reserva;
 import java.util.ArrayList;
 /**
  *

@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Usuario
  */
-public class Administrador {
+public class Administrador extends Empleado{
     private ArrayList<Empleado> empleados;
 
     public Administrador() {
