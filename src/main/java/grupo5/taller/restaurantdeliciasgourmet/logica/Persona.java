@@ -4,16 +4,20 @@
  */
 package grupo5.taller.restaurantdeliciasgourmet.logica;
 
+import javax.persistence.MappedSuperclass;
+
 /**
  *
  * @author Usuario
  */
-public class Persona {
-    protected String nombre;
-    protected String nombreUsuario;
-    protected String contrasenia;
-    protected String correoElectronico;
-    protected String telefono;
+
+@MappedSuperclass
+ abstract class Persona {
+    private String nombre;
+    private String nombreUsuario;
+    private String contrasenia;
+    private String correoElectronico;
+    private String telefono;
 
     public Persona() {
     }

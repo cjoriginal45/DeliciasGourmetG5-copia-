@@ -94,7 +94,7 @@ public class HomeAdmin extends JFrame {
         btnEmpleados.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new EmpleadosList().setVisible(true);
+//                new EmpleadosList().setVisible(true);
             }
         });
 
