@@ -1,57 +1,36 @@
 
 package grupo5.taller.restaurantdeliciasgourmet.logica;
+import java.util.List;
 
-
-public class Cliente{ 
-        private int numeroMesa;
-        private int capacidad;
-        private String ubicacion;
-        private boolean disponibiñidad;
-
+public class Cliente extends Persona{ 
+    
+    private int clienteId;
+    private List<String> intolerancias;
+    
     public Cliente() {
     }
-
-    public Cliente(int numeroMesa, int capacidad, String ubicacion, boolean disponibinidad) {
-        this.numeroMesa = numeroMesa;
-        this.capacidad = capacidad;
-        this.ubicacion = ubicacion;
-        this.disponibiñidad = disponibinidad;
+    
+    public Cliente(String nombre, String nombreUsuario, String contrasenia, String correoElectronico, String telefono, int clienteId, List<String> intolerancias){
+        super(nombre, nombreUsuario, contrasenia, correoElectronico, telefono);
+        this.clienteId = clienteId;
+        this.intolerancias = intolerancias;
     }
 
-    public int getNumeroMesa() {
-        return numeroMesa;
+    public int getClienteId() {
+        return clienteId;
     }
 
-    public void setNumeroMesa(int numeroMesa) {
-        this.numeroMesa = numeroMesa;
+    public void setClienteId(int clienteId) {
+        this.clienteId = clienteId;
     }
 
-    public int getCapacidad() {
-        return capacidad;
+    public List<String> getIntolerancias() {
+        return intolerancias;
     }
 
-    public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
+    public void setIntolerancias(List<String> intolerancias) {
+        this.intolerancias = intolerancias;
     }
-
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
-    public boolean isDisponibiñidad() {
-        return disponibiñidad;
-    }
-
-    public void setDisponibiñidad(boolean disponibinidad) {
-        this.disponibiñidad = disponibinidad;
-    }
-        
-        
-        
-
+    
     
 }
