@@ -7,6 +7,7 @@ package grupo5.taller.restaurantdeliciasgourmet.logica;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -18,124 +19,48 @@ public class Reserva {
     private LocalTime horaInicio;
     private LocalTime horaFin;
     private EstadoReserva estadoReserva;
-    private String motivo;
     private TarjetaCredito tarjeta;
     private Mesa mesa;
     private Cliente cliente;
     private ArrayList<Recepcionista> recepcionistas;
-    private GestionHorario gestionarHorario;
-    
+    private Horario horario;
+    private ArrayList<String> intolerancias;
+    private ArrayList<Reporte> reportes;
+    private ArrayList<Administrador> administradores;
     //faltarian agregar mas atributos
-    
-    private void realizarComentario(){
-        
-    }
-    
-    private void enviarRecordatorio(){
-        
-    }
-    
-    private void cobrarMulta(TarjetaCredito tarjeta, EstadoReserva estado){
-        
-    }
-    
-    private void verReservasPorCliente(int clienteId){
-        
-    }
-    
-    private void modificarReserva(int idReserva, LocalTime fechaReserva, Mesa nuevaMesa){
-        
+
+    public Reserva() {
     }
 
-    public int getIdReserva() {
-        return idReserva;
-    }
-
-    public void setIdReserva(int idReserva) {
+    public Reserva(int idReserva, LocalDate fechaReserva, LocalTime horaInicio, LocalTime horaFin, EstadoReserva estadoReserva, TarjetaCredito tarjeta, Mesa mesa, Cliente cliente, ArrayList<Recepcionista> recepcionistas, Horario horario, ArrayList<String> intolerancias, ArrayList<Reporte> reportes, ArrayList<Administrador> administradores) {
         this.idReserva = idReserva;
-    }
-
-    public LocalDate getFechaReserva() {
-        return fechaReserva;
-    }
-
-    public void setFechaReserva(LocalDate fechaReserva) {
         this.fechaReserva = fechaReserva;
-    }
-
-    public LocalTime getHoraInicio() {
-        return horaInicio;
-    }
-
-    public void setHoraInicio(LocalTime horaInicio) {
         this.horaInicio = horaInicio;
-    }
-
-    public LocalTime getHoraFin() {
-        return horaFin;
-    }
-
-    public void setHoraFin(LocalTime horaFin) {
         this.horaFin = horaFin;
-    }
-
-    public EstadoReserva getEstadoReserva() {
-        return estadoReserva;
-    }
-
-    public void setEstadoReserva(EstadoReserva estadoReserva) {
         this.estadoReserva = estadoReserva;
-    }
-
-    public String getMotivo() {
-        return motivo;
-    }
-
-    public void setMotivo(String motivo) {
-        this.motivo = motivo;
-    }
-
-    public TarjetaCredito getTarjeta() {
-        return tarjeta;
-    }
-
-    public void setTarjeta(TarjetaCredito tarjeta) {
         this.tarjeta = tarjeta;
-    }
-
-    public Mesa getMesa() {
-        return mesa;
-    }
-
-    public void setMesa(Mesa mesa) {
         this.mesa = mesa;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    }
-
-    public ArrayList<Recepcionista> getRecepcionistas() {
-        return recepcionistas;
-    }
-
-    public void setRecepcionistas(ArrayList<Recepcionista> recepcionistas) {
         this.recepcionistas = recepcionistas;
+        this.horario = horario;
+        this.intolerancias = intolerancias;
+        this.reportes = reportes;
+        this.administradores = administradores;
     }
 
-    public GestionHorario getGestionarHorario() {
-        return gestionarHorario;
+    public Reserva(LocalDate fechaReserva, LocalTime horaInicio, LocalTime horaFin, EstadoReserva estadoReserva, TarjetaCredito tarjeta, Mesa mesa, Cliente cliente, ArrayList<Recepcionista> recepcionistas, Horario horario, ArrayList<String> intolerancias, ArrayList<Reporte> reportes, ArrayList<Administrador> administradores) {
+        this.fechaReserva = fechaReserva;
+        this.horaInicio = horaInicio;
+        this.horaFin = horaFin;
+        this.estadoReserva = estadoReserva;
+        this.tarjeta = tarjeta;
+        this.mesa = mesa;
+        this.cliente = cliente;
+        this.recepcionistas = recepcionistas;
+        this.horario = horario;
+        this.intolerancias = intolerancias;
+        this.reportes = reportes;
+        this.administradores = administradores;
     }
-
-    public void setGestionarHorario(GestionHorario gestionarHorario) {
-        this.gestionarHorario = gestionarHorario;
-    }
-    
-    
-    
     
 }

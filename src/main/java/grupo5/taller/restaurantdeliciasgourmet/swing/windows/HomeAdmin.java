@@ -2,7 +2,6 @@ package grupo5.taller.restaurantdeliciasgourmet.swing.windows;
 
 import javax.swing.*;
 import com.formdev.flatlaf.FlatDarkLaf;
-import grupo5.taller.restaurantdeliciasgourmet.RestaurantDeliciasGourmet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -94,7 +93,7 @@ public class HomeAdmin extends JFrame {
         btnEmpleados.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                new EmpleadosList().setVisible(true);
+                new EmpleadosList().setVisible(true);
             }
         });
 
