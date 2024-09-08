@@ -2,90 +2,33 @@ package grupo5.taller.restaurantdeliciasgourmet.logica;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
 @Entity
-public class Empleado extends Persona implements Serializable {
-    
+public class Empleado {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer idEmpleado;
-    @Enumerated(EnumType.STRING)
+    
     private Rol rol;
-    @Enumerated(EnumType.STRING)
-    private Permiso permiso;
+    private String correoElectronico;
+    private String contraseña;
+    
 
     public Empleado() {
     }
 
-
-    public Empleado(String nombre, String nombreUsuario, String contrasenia, String correo, String telefono, Rol rol, Permiso permisos) {
-        setNombre(nombre);
-        setNombreUsuario(nombreUsuario);
-        setContrasenia(contrasenia);
-        setCorreoElectronico(correo);
-        setTelefono(telefono);
-    }
-    @Override
-    public String getNombre() {
-    return super.getNombre();
-}
-
-    @Override
-    public void setNombre(String nombre) {
-    super.setNombre(nombre);
-}
-
-    @Override
-    public String getNombreUsuario() {
-    return super.getNombreUsuario();
-}
-
-    @Override
-    public void setNombreUsuario(String nombreUsuario) {
-    super.setNombreUsuario(nombreUsuario);
-}
-
-    @Override
-    public String getContrasenia() {
-    return super.getContrasenia();
-}
-
-    @Override
-    public void setContrasenia(String contrasenia) {
-    super.setContrasenia(contrasenia);
-}
-
-    @Override
-    public String getCorreoElectronico() {
-    return super.getCorreoElectronico();
-}
-
-    @Override
-    public void setCorreoElectronico(String correoElectronico) {
-    super.setCorreoElectronico(correoElectronico);
-}
-
-    @Override
-    public String getTelefono() {
-    return super.getTelefono();
-}
-
-    @Override
-    public void setTelefono(String telefono) {
-    super.setTelefono(telefono);
-}
-
-    
-    public Empleado(int idEmpleado, String nombre, String nombreUsuario, String contrasenia, String correo, String telefono, Rol rol, Permiso permisos) {
+    public Empleado(Integer idEmpleado, Rol rol, String correoElectronico, String contraseña) {
         this.idEmpleado = idEmpleado;
-        setNombre(nombre);
-        setNombreUsuario(nombreUsuario);
-        setContrasenia(contrasenia);
-        setCorreoElectronico(correo);
-        setTelefono(telefono);
         this.rol = rol;
-        this.permiso = permisos;
+        this.correoElectronico = correoElectronico;
+        this.contraseña = contraseña;
     }
-    private void insertEmpleado(){
+
+    public Empleado(Rol rol, String correoElectronico, String contraseña) {
+        this.rol = rol;
+        this.correoElectronico = correoElectronico;
+        this.contraseña = contraseña;
     }
 
     public Integer getIdEmpleado() {
@@ -104,16 +47,32 @@ public class Empleado extends Persona implements Serializable {
         this.rol = rol;
     }
 
-    public Permiso getPermiso() {
-        return permiso;
+    public String getCorreoElectronico() {
+        return correoElectronico;
     }
 
-    public void setPermiso(Permiso permiso) {
-        this.permiso = permiso;
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    public void gestionarReserva(int idReservas){
+        
     }
 
     @Override
     public String toString() {
-        return "Empleado{" + "idEmpleado=" + idEmpleado + ", rol=" + rol + ", permiso=" + permiso + '}';
+        return "Empleado{" + "idEmpleado=" + idEmpleado + ", rol=" + rol + ", correoElectronico=" + correoElectronico + ", contrase\u00f1a=" + contraseña + '}';
     }
+   
+    
+    
+    
 }
