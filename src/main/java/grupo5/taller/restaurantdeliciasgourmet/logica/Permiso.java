@@ -7,6 +7,7 @@ package grupo5.taller.restaurantdeliciasgourmet.logica;
 /**
  *
  * @author Usuario
+ * ELIMINAR CLASE
  */
 public enum Permiso {
     PERMISO_COMPLETO,

@@ -1,6 +1,5 @@
 package grupo5.taller.restaurantdeliciasgourmet.logica;
 
-import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
