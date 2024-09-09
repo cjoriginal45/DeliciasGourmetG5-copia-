@@ -19,10 +19,7 @@ public class Recepcionista extends Empleado{
         this.reservas = reservas;
     }
     
-    public Recepcionista(ArrayList<Reserva> reservas, int idEmpleado, String nombre, String nombreUsuario, String contrasenia, String correo, String telefono, Rol rol, Permiso permisos) {
-        super(idEmpleado, nombre, nombreUsuario, contrasenia, correo, telefono, rol, permisos);
-        this.reservas = reservas;
-    }
+   
     
     public ArrayList<Reserva> getReservas() {
         return reservas;
