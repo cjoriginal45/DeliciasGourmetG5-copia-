@@ -1,6 +1,5 @@
 package grupo5.taller.restaurantdeliciasgourmet.logica;
 
-import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
@@ -9,8 +8,7 @@ public class Empleado {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer idEmpleado;
-    
-    private Rol rol;
+    private Rol nombre_rol;
     private String correoElectronico;
     private String contraseña;
     
@@ -20,13 +18,13 @@ public class Empleado {
 
     public Empleado(Integer idEmpleado, Rol rol, String correoElectronico, String contraseña) {
         this.idEmpleado = idEmpleado;
-        this.rol = rol;
+        this.nombre_rol = rol;
         this.correoElectronico = correoElectronico;
         this.contraseña = contraseña;
     }
 
     public Empleado(Rol rol, String correoElectronico, String contraseña) {
-        this.rol = rol;
+        this.nombre_rol = rol;
         this.correoElectronico = correoElectronico;
         this.contraseña = contraseña;
     }
@@ -40,11 +38,11 @@ public class Empleado {
     }
 
     public Rol getRol() {
-        return rol;
+        return nombre_rol;
     }
 
     public void setRol(Rol rol) {
-        this.rol = rol;
+        this.nombre_rol = rol;
     }
 
     public String getCorreoElectronico() {
@@ -63,13 +61,13 @@ public class Empleado {
         this.contraseña = contraseña;
     }
 
-    public void gestionarReserva(int idReservas){
-        
-    }
-
     @Override
     public String toString() {
-        return "Empleado{" + "idEmpleado=" + idEmpleado + ", rol=" + rol + ", correoElectronico=" + correoElectronico + ", contrase\u00f1a=" + contraseña + '}';
+        return "Empleado{" + "idEmpleado=" + idEmpleado + ", rol=" + nombre_rol + ", correoElectronico=" + correoElectronico + ", contrase\u00f1a=" + contraseña + '}';
+    }
+
+    public Object getNombre() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
    
     

@@ -7,8 +7,35 @@ package grupo5.taller.restaurantdeliciasgourmet.logica;
 /**
  *
  * @author Usuario
+ * ELIMINAR CLASE
  */
-public enum Permiso {
-    PERMISO_COMPLETO,
-    PERMISO_LIMITADO;
+public class Permiso {
+    private String tipoPermiso;
+    private Rol rol;
+    
+    public Permiso() {
+    }
+
+    public Permiso(String tipoPermiso, Rol rol) {
+        this.tipoPermiso = tipoPermiso;
+        this.rol = rol;
+    }
+
+    public String getTipoPermiso() {
+        return tipoPermiso;
+    }
+
+    public void setTipoPermiso(String tipoPermiso) {
+        this.tipoPermiso = tipoPermiso;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+
+
 }

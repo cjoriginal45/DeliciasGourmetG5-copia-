@@ -30,11 +30,7 @@ public class Recepcionista extends Empleado{
     }    
     
     
-    public void verReservas(){
-        
-    }
-    
-    public void modificarReservas(){
+    public void asignarMesa(int idReserva, int numeroMesa){
         
     }
     
