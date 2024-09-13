@@ -1,8 +1,10 @@
 
 package grupo5.taller.restaurantdeliciasgourmet.logica;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -72,33 +74,49 @@ public class Administrador extends Empleado{
     public void setMesas(ArrayList<Mesa> mesas) {
         this.mesas = mesas;
     }
-
-
-            
-    public void bloquearMesa(int mesaId,LocalTime fecha){
+    
+    public void crearEmpleado(String nombre,Rol rol,String correoElectronico, String contrasenia, String permiso){
         
     }
     
-    public void crearEmpleado(String nombre,Rol rol,String correoElectronico,String telefono
-                               , String contrasenia, Permiso permiso){
+    public void asignarRolEmpleado(Empleado empleado, Rol rol){
         
     }
     
-    public void asignarRolEmpleado(int idEmpleado){
+    public void eliminarEmpleado(Empleado empleado){
         
     }
     
-    public void desbloquearMesa(int mesaId, LocalTime fecha){
+   /* public List<Reporte> generarReporteReservas(LocalDate fechaInicio, LocalDate fechaFin){
+        return;
+    } */
+    
+    public void configurarHorarioEspecial(LocalDate fecha, LocalDate horaApertura, LocalDate horaCierre){
         
     }
     
-    public void eliminarEmpleado(int idEmpleado){
+    public void definirHorarioAperturaCierre(LocalDate horaApertura, LocalDate horaCierre){
         
     }
     
-    public void generarReporteReservas(){
+    public void bloquearfranjaHoraria(){
         
     }
     
+    public void ajustarHorarioMesa(int numeroMesa, LocalDate horaInicio, LocalDate horaFin, boolean disponible){
+        
+    }
+    
+    public void quitarReservaLista(Reserva reserva){
+        
+    }
+    
+    public void agregarReservaLista(Reserva reserva){
+        
+    }
+    
+    public void gestionarReserva(int idReserva){
+        
+    }
     
 }

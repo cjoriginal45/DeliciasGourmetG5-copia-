@@ -72,9 +72,9 @@ public class EmpleadosList extends JFrame {
                     empleado.getIdEmpleado(),
                     empleado.getNombre(),
                     empleado.getCorreoElectronico(),
-                    empleado.getTelefono(),
+                    //empleado.getTelefono(),
                     empleado.getRol() != null ? empleado.getRol().toString() : "Sin Rol",
-                    empleado.getPermiso() != null ? empleado.getPermiso().toString() : "Sin Permiso"
+                   // empleado.getPermiso() != null ? empleado.getPermiso().toString() : "Sin Permiso"
                 };
                 model.addRow(rowData);
             }
@@ -93,8 +93,8 @@ public class EmpleadosList extends JFrame {
         JTextField telefonoField = new JTextField();
         
         // Use JComboBox for enums Rol and Permiso
-        JComboBox<Rol> rolComboBox = new JComboBox<>(Rol.values());
-        JComboBox<Permiso> permisoComboBox = new JComboBox<>(Permiso.values());
+       // JComboBox<Rol> rolComboBox = new JComboBox<>(Rol.values());
+       // JComboBox<Permiso> permisoComboBox = new JComboBox<>(Permiso.values());
 
         dialog.add(new JLabel("Nombre:"));
         dialog.add(nombreField);
@@ -103,9 +103,9 @@ public class EmpleadosList extends JFrame {
         dialog.add(new JLabel("Teléfono:"));
         dialog.add(telefonoField);
         dialog.add(new JLabel("Rol:"));
-        dialog.add(rolComboBox);
+        //dialog.add(rolComboBox);
         dialog.add(new JLabel("Permiso:"));
-        dialog.add(permisoComboBox);
+       // dialog.add(permisoComboBox);
 
         JButton saveButton = new JButton("Guardar");
         saveButton.addActionListener(new ActionListener() {
@@ -114,15 +114,15 @@ public class EmpleadosList extends JFrame {
                 String nombre = nombreField.getText();
                 String correo = correoField.getText();
                 String telefono = telefonoField.getText();
-                Rol rol = (Rol) rolComboBox.getSelectedItem();
-                Permiso permiso = (Permiso) permisoComboBox.getSelectedItem();
+         //       Rol rol = (Rol) rolComboBox.getSelectedItem();
+           //     Permiso permiso = (Permiso) permisoComboBox.getSelectedItem();
 
                 Empleado nuevoEmpleado = new Empleado();
-                nuevoEmpleado.setNombre(nombre);
+                //nuevoEmpleado.setNombre(nombre);
                 nuevoEmpleado.setCorreoElectronico(correo);
-                nuevoEmpleado.setTelefono(telefono);
-                nuevoEmpleado.setRol(rol);
-                nuevoEmpleado.setPermiso(permiso);
+               // nuevoEmpleado.setTelefono(telefono);
+               // nuevoEmpleado.setRol(rol);
+                //nuevoEmpleado.setPermiso(permiso);
 
                 try {
                     empleadoJpaController.create(nuevoEmpleado);

@@ -2,7 +2,6 @@
 package grupo5.taller.restaurantdeliciasgourmet.logica;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Mesa {
         private int numeroMesa;
@@ -10,7 +9,6 @@ public class Mesa {
         private String ubicacion;
         private boolean disponibilidad;
         private ArrayList<Reserva> reservas;
-        private ArrayList<Horario> horarios;
         private ArrayList<Administrador> administradores;
         
     public Mesa() {
@@ -22,7 +20,6 @@ public class Mesa {
         this.ubicacion = ubicacion;
         this.disponibilidad = disponibilidad;
         this.reservas = reservas;
-        this.horarios = horarios;
         this.administradores = administradores;
     }
 
@@ -66,14 +63,6 @@ public class Mesa {
         this.reservas = reservas;
     }
 
-    public ArrayList<Horario> getHorarios() {
-        return horarios;
-    }
-
-    public void setHorarios(ArrayList<Horario> horarios) {
-        this.horarios = horarios;
-    }
-
     public ArrayList<Administrador> getAdministradores() {
         return administradores;
     }
@@ -84,22 +73,15 @@ public class Mesa {
 
     @Override
     public String toString() {
-        return "Mesa{" + "numeroMesa=" + numeroMesa + ", capacidad=" + capacidad + ", ubicacion=" + ubicacion + ", disponibilidad=" + disponibilidad + ", reservas=" + reservas + ", horarios=" + horarios + ", administradores=" + administradores + '}';
+        return "Mesa{" + "numeroMesa=" + numeroMesa + ", capacidad=" + capacidad + ", ubicacion=" + ubicacion + ", disponibilidad=" + disponibilidad + ", reservas=" + reservas + ", administradores=" + administradores + '}';
     }
-    
-    public void filtrarCapacidad(){
-        
-    }
-   
-    public void filtrarUbicacion(){
-        
-    }
+
     
     public void bloquearMesa(){
         
     }
     
-    public void bloquearMesas(){
+    public void desbloquearMesa(){
         
     }
     

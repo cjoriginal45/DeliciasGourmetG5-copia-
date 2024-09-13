@@ -1,5 +1,6 @@
+grupo5\taller\restaurantdeliciasgourmet\logica\Permiso.class
 grupo5\taller\restaurantdeliciasgourmet\logica\Rol.class
-grupo5\taller\restaurantdeliciasgourmet\logica\Empleado.class
 grupo5\taller\restaurantdeliciasgourmet\persistencia\exceptions\IllegalOrphanException.class
 grupo5\taller\restaurantdeliciasgourmet\exceptions\IllegalOrphanException.class
+grupo5\taller\restaurantdeliciasgourmet\logica\Empleado.class
 grupo5\taller\restaurantdeliciasgourmet\persistencia\exceptions\PreexistingEntityException.class
