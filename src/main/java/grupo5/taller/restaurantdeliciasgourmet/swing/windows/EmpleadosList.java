@@ -3,7 +3,6 @@ package grupo5.taller.restaurantdeliciasgourmet.swing.windows;
 import grupo5.taller.restaurantdeliciasgourmet.persistencia.EmpleadoJpaController;
 import grupo5.taller.restaurantdeliciasgourmet.logica.Empleado;
 import grupo5.taller.restaurantdeliciasgourmet.logica.Rol;
-import grupo5.taller.restaurantdeliciasgourmet.logica.Permiso;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

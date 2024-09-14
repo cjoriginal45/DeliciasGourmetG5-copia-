@@ -1,32 +1,43 @@
-
 package grupo5.taller.restaurantdeliciasgourmet.logica;
+
+import grupo5.taller.restaurantdeliciasgourmet.RestaurantDeliciasGourmet;
 import java.util.ArrayList;
 
 public class Rol {
+
+    private static ArrayList<Rol> roles = new ArrayList<>();
     private String nombreRol;
     private ArrayList<Empleado> empleados;
-    private ArrayList<Permiso> permisos;
 
     public Rol() {
+    }
+
+    public Rol crearRol(String nombreRol, ArrayList<Empleado> empleados) {
+        Rol r = new Rol(nombreRol, empleados);
+        Rol.getRoles().add(r);
+        return r;
     }
 
     public Rol(String nombreRol, ArrayList<Empleado> empleados) {
         this.nombreRol = nombreRol;
         this.empleados = empleados;
+        getRoles().add(this);
     }
 
-    public Rol(String nombreRol, ArrayList<Empleado> empleados, ArrayList<Permiso> permisos) {
-        this.nombreRol = nombreRol;
+    public static ArrayList<Rol> getRoles() {
+        return roles;
+    }
+
+    public static void setRoles(ArrayList<Rol> roles) {
+        Rol.roles = roles;
+    }
+
+    public ArrayList<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public void setEmpleados(ArrayList<Empleado> empleados) {
         this.empleados = empleados;
-        this.permisos = permisos;
-    }
-
-    public ArrayList<Permiso> getPermisos() {
-        return permisos;
-    }
-
-    public void setPermisos(ArrayList<Permiso> permisos) {
-        this.permisos = permisos;
     }
 
     public String getNombreRol() {
@@ -47,11 +58,11 @@ public class Rol {
 
     @Override
     public String toString() {
-        return "Rol{" + "nombreRol=" + nombreRol + ", empleado=" + empleados + '}';
+        return this.nombreRol;
     }
-    
-    public void asignarRol(){
-        
+
+    public void asignarRol() {
+
     }
-    
+
 }
