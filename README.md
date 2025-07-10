@@ -1,19 +1,6 @@
-# Delicias Gourmet G5
+Delicias Gourmet G5
 
-### Programación Orientada a Objetos - Grupo 5 - 2024
+Sistema de reservas para un Restaurante.
 
----
+Taller para la asignatura Programación Orientada a Objetos 2024
 
-### **Integrantes**
-
-- Américo Benítez
-- Sebastián Haoys
-- Ribarola Joaquín
-- Sofía Guardia
-- Agüero Facundo
-
-### **Profesores**
-
-- Elizabeth Silva
-- Juan José Aguirre
-- Patricia Balbuena
